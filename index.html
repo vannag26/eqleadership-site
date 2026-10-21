@@ -150,7 +150,7 @@
 
     <div class="results" id="results" hidden tabindex="-1" aria-labelledby="results-h">
       <h3 id="results-h">Your self-check results</h3>
-      <p>Scores show how often you said each habit shows up today (3 to 15 per area). There are no good or bad totals, just a place to start.</p>
+      <p>Each bar reflects how often you said these habits show up for you today. There is no good or bad result, just a place to start.</p>
       <div id="bars"></div>
       <div class="reflect" id="reflect"></div>
       <div class="signup" aria-labelledby="full-assessment-h">
@@ -162,7 +162,7 @@
 
       <form class="signup" id="signup" data-mode="post" data-endpoint="https://formsubmit.co/ajax/1cc49aecd955185c9c11f3f42515bd5c" data-mailto="hello@eqleadershipinstitute.com" novalidate>
         <h4>Email me my results and a one-page reflection guide</h4>
-        <p style="margin:0;color:var(--muted)">We'll send your scores and a short guide for the area you chose. You can also join the waitlist for the first leadership cohort and workshops.</p>
+        <p style="margin:0;color:var(--muted)">We'll send your results and a short guide for the area you chose. You can also join the waitlist for the first leadership cohort and workshops.</p>
         <div class="fgrid">
           <div class="field"><label for="s-name">First name</label><input id="s-name" name="name" autocomplete="given-name" required></div>
           <div class="field"><label for="s-email">Work email</label><input id="s-email" name="email" type="email" autocomplete="email" required></div>
@@ -432,7 +432,7 @@
       }
       var sc=[0,0,0,0];
       [].forEach.call(form.querySelectorAll('input[type=radio]:checked'),function(r){sc[+r.getAttribute('data-area')]+=+r.value;});
-      var bars='';sc.forEach(function(s,i){bars+='<div class="bar"><div class="lbl"><span>'+AREAS[i].name+'</span><span>'+s+' of 15</span></div><div class="track" aria-hidden="true"><div class="fill" style="width:'+Math.round(s/15*100)+'%"></div></div></div>';});
+      var bars='';sc.forEach(function(s,i){bars+='<div class="bar"><div class="lbl"><span>'+AREAS[i].name+'</span><span>'+(s>=12?'Shows up often':(s>=8?'Shows up sometimes':'Room to explore'))+'</span></div><div class="track" aria-hidden="true"><div class="fill" style="width:'+Math.round(s/15*100)+'%"></div></div></div>';});
       var lo=sc.indexOf(Math.min.apply(null,sc)),hi=sc.indexOf(Math.max.apply(null,sc));
       document.getElementById('bars').innerHTML=bars;
       document.getElementById('reflect').innerHTML='<p style="margin:0 0 8px"><strong>Where you lean in today:</strong> '+AREAS[hi].name+'.</p><p style="margin:0 0 8px"><strong>An area to explore next:</strong> '+AREAS[lo].name+'.</p><p style="margin:0"><strong>Try this:</strong> '+AREAS[lo].tip+'</p>';
@@ -455,7 +455,7 @@
       if(bad.length){st.textContent='Please add your first name, a valid work email and your role.';bad[0].focus();return;}
       var g=function(id){return su.querySelector(id).value.trim();},sc=window.__eqScores||[];
       var data={_subject:'[EQ Leadership] Self-check sign-up',_template:'table',name:g('#s-name'),email:g('#s-email'),role:g('#s-role'),org:g('#s-org'),focus:g('#s-focus'),waitlist:su.querySelector('#s-wait').checked,
-        scores:AREAS.map(function(a,i){return a.name+': '+(sc[i]||'-')+'/15';}).join(', ')};
+        scores:AREAS.map(function(a,i){return a.name+': '+(sc[i]||'-')+' of 15';}).join(', ')};
       if(su.getAttribute('data-mode')==='post'&&su.getAttribute('data-endpoint')){
         fetch(su.getAttribute('data-endpoint'),{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
           .then(function(r){st.textContent=r.ok?'Thank you. Your results are on their way.':'Something went wrong. Please try again.';})
