@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>EQ Leadership Institute | Emotionally intelligent leadership</title>
 <meta name="description" content="Lead with clarity, trust and humanity, especially under pressure. Take the free 5-minute EQ Leadership Self-Check and see your results right away.">
 <link rel="canonical" href="https://eqleadershipinstitute.com/">
@@ -24,8 +25,8 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-900.webp 900w, img/hero.webp 1680w" imagesizes="100vw">
-<link rel="stylesheet" href="css/site.css">
+<link rel="preload" as="image" type="image/avif" imagesrcset="img/v2/hero-768.avif 768w, img/v2/hero-1280.avif 1280w, img/v2/hero-1774.avif 1774w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="css/eq.css">
 <!--
   ANALYTICS PLACEHOLDER: nothing loads until Vanna picks a free option and adds her own ID
   (Cloudflare Web Analytics or GA4, same pattern as vdgmanagement.com).
@@ -39,7 +40,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="EQ Leadership Institute, back to top" data-cta="header-logo">
-      <picture><source srcset="img/eq-badge-176.webp" type="image/webp"><img class="mark" src="img/eq-badge-176.png" width="80" height="80" alt=""></picture>
+      <picture><source media="(max-width:719px)" type="image/avif" srcset="img/v2/eq-badge-64.avif 1x, img/v2/eq-badge-128.avif 2x"><source media="(max-width:719px)" type="image/webp" srcset="img/v2/eq-badge-64.webp 1x, img/v2/eq-badge-128.webp 2x"><source type="image/avif" srcset="img/v2/eq-badge-80.avif 1x, img/v2/eq-badge-160.avif 2x"><source type="image/webp" srcset="img/v2/eq-badge-80.webp 1x, img/v2/eq-badge-160.webp 2x"><img class="mark" src="img/v2/eq-badge-160.png" width="80" height="80" alt=""></picture>
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#why" data-cta="nav-why">Why EQ</a>
@@ -56,10 +57,7 @@
 
 <!-- 1. HERO -->
 <section class="hero" id="top" aria-labelledby="hero-h">
-  <picture>
-    <source type="image/webp" srcset="img/hero-900.webp 900w, img/hero.webp 1680w" sizes="100vw">
-    <img src="img/hero.jpg" width="1680" height="944" alt="Two executives in business attire in a coaching conversation by an office window overlooking the city" fetchpriority="high">
-  </picture>
+  <div class="hero-media"><picture><source type="image/avif" srcset="img/v2/hero-768.avif 768w, img/v2/hero-1280.avif 1280w, img/v2/hero-1774.avif 1774w" sizes="100vw"><source type="image/webp" srcset="img/v2/hero-768.webp 768w, img/v2/hero-1280.webp 1280w, img/v2/hero-1774.webp 1774w" sizes="100vw"><img src="img/v2/hero-1774.jpg" srcset="img/v2/hero-768.jpg 768w, img/v2/hero-1280.jpg 1280w, img/v2/hero-1774.jpg 1774w" sizes="100vw" width="1774" height="887" alt="A leader standing to guide a boardroom discussion with executives and clinicians, city skyline at sunset" fetchpriority="high"></picture></div>
   <div class="wrap">
     <p class="kicker">EQ Leadership Institute</p>
     <h1 id="hero-h">Emotionally intelligent <em>leadership.</em></h1>
@@ -116,7 +114,7 @@
         </ul>
       </div>
       <div class="photo">
-        <picture><source type="image/webp" srcset="img/walk-900.webp 900w, img/walk.webp 1680w" sizes="(max-width:860px) 100vw, 50vw"><img src="img/walk.jpg" width="1680" height="944" loading="lazy" alt="Two executives in tailored suits walking and talking down a bright office corridor"></picture>
+        <picture><source type="image/avif" srcset="img/v2/conversation-640.avif 640w, img/v2/conversation-1080.avif 1080w" sizes="(max-width:899px) 92vw, 540px"><source type="image/webp" srcset="img/v2/conversation-640.webp 640w, img/v2/conversation-1080.webp 1080w" sizes="(max-width:899px) 92vw, 540px"><img src="img/v2/conversation-1080.jpg" srcset="img/v2/conversation-640.jpg 640w, img/v2/conversation-1080.jpg 1080w" sizes="(max-width:899px) 92vw, 540px" width="1080" height="720" alt="Four leaders, including a physician, in a warm conversation in a bright hospital lobby" loading="lazy" decoding="async"></picture>
       </div>
     </div>
     <div class="cta-band"><p>Curious where you stand today?</p><a class="btn btn-clay" href="#self-check" data-cta="why-check">Take the free self-check</a></div>
@@ -133,9 +131,7 @@
         <p class="lead">Twelve short statements across four areas: self-awareness, self-regulation, empathy, and connection. Answer for how you usually lead, not how you'd like to. Your results appear right here.</p>
         <p class="micro">Your answers stay in your browser. Nothing is sent anywhere unless you choose to email your results.</p>
       </div>
-      <div class="photo">
-        <picture><source type="image/webp" srcset="img/notebook-900.webp 900w, img/notebook.webp 1680w" sizes="(max-width:860px) 100vw, 50vw"><img src="img/notebook.jpg" width="1680" height="944" loading="lazy" alt="A professional in a navy suit writing reflections in a notebook beside a cup of coffee"></picture>
-      </div>
+      <div class="areas" aria-labelledby="areas-h"><p class="kicker">Self-check areas</p><h3 id="areas-h">Key areas</h3><ol><li><span class="n" aria-hidden="true">01</span><div><strong>Self-awareness</strong><span>Noticing what you feel and how you come across.</span></div></li><li><span class="n" aria-hidden="true">02</span><div><strong>Self-regulation</strong><span>Choosing your response, especially under pressure.</span></div></li><li><span class="n" aria-hidden="true">03</span><div><strong>Empathy</strong><span>Understanding how others feel and what they need.</span></div></li><li><span class="n" aria-hidden="true">04</span><div><strong>Connection</strong><span>Communicating clearly and building trust.</span></div></li></ol></div>
     </div>
 
     <form class="check" id="eq-check" novalidate>
@@ -208,12 +204,12 @@
         <p class="lead">The Human + AI Leadership Lab is open for founding seats. Explore paid assessment options below, or join the waitlist for coaching, workshops and industry-specific programs in development.</p>
       </div>
       <div class="photo">
-        <picture><source type="image/webp" srcset="img/room-900.webp 900w, img/room.webp 1680w" sizes="(max-width:860px) 100vw, 50vw"><img src="img/room.jpg" width="1680" height="944" loading="lazy" alt="A sunlit training room with wooden chairs arranged in a circle"></picture>
+        <picture><source type="image/avif" srcset="img/v2/team-640.avif 640w, img/v2/team-1080.avif 1080w" sizes="(max-width:899px) 92vw, 540px"><source type="image/webp" srcset="img/v2/team-640.webp 640w, img/v2/team-1080.webp 1080w" sizes="(max-width:899px) 92vw, 540px"><img src="img/v2/team-1080.jpg" srcset="img/v2/team-640.jpg 640w, img/v2/team-1080.jpg 1080w" sizes="(max-width:899px) 92vw, 540px" width="1080" height="720" alt="A leadership team of executives and a physician standing together in a boardroom" loading="lazy" decoding="async"></picture>
       </div>
     </div>
     <div class="prog">
       <div class="card"><h3>Executive coaching</h3><p>One-to-one work on how you lead under pressure.</p><span class="tag">Waitlist</span></div>
-      <div class="card"><h3>Human + AI Leadership Lab</h3><p>A four-week live virtual cohort. $795 founding seat. <a href="#lab">Details</a></p><span class="tag">Open now</span></div>
+      <div class="card"><h3>Human + AI Leadership Lab</h3><p>A four-week live virtual cohort. Contact us for pricing. <a href="#lab">Details</a></p><span class="tag">Open now</span></div>
       <div class="card"><h3>Workshops &amp; trainings</h3><p>Sessions for teams on communication, trust and collaboration.</p><span class="tag">Waitlist</span></div>
       <div class="card"><h3>Assessments &amp; diagnostics</h3><p>Paid leadership reflection tools with a report and facilitated debrief. <a href="#assessments">Explore assessment options</a>.</p><span class="tag">Contact us for pricing</span></div>
       <div class="card"><h3>Industry-specific programs</h3><p>Shaped for healthcare, technology and finance.</p><span class="tag">Waitlist</span></div>
@@ -226,7 +222,7 @@
 <section class="section" id="assessments" aria-labelledby="assessments-h">
   <div class="wrap">
     <div class="center">
-      <p class="kicker">Paid assessments · USD</p>
+      <p class="kicker">Paid assessments</p>
       <h2 id="assessments-h">Go deeper into how you lead.</h2>
       <p class="lead">Keep the self-check as your free starting point. For deeper reflection, choose a report and facilitated debrief for yourself, your team or your organization.</p>
     </div>
@@ -256,7 +252,8 @@
         <p style="margin-top:18px"><a href="mailto:hello@eqleadershipinstitute.com?subject=Organization-wide%20assessment%20inquiry&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20discuss%20this%20assessment%20option.%0A%0AName%3A%0ARole%3A%0AOrganization%3A%0ANumber%20of%20leaders%3A%0APreferred%20timing%3A%0A" data-cta="assessment-organization">Discuss organization scope</a></p>
       </div>
     </div>
-    <p class="disclaimer" style="margin-top:24px">These are EQ Leadership Institute's own leadership reflection tools, not validated psychometric, clinical or diagnostic tests. They are not EQ-i 2.0, EQ-i 360 or Hogan assessments. All prices are in US dollars; scope and delivery details are agreed before purchase.</p>
+    <div class="cta-band"><p>Contact us for pricing.</p><a class="btn btn-clay" href="mailto:hello@eqleadershipinstitute.com?subject=Book%20a%20call&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20book%20a%20call.%0A%0AName%3A%0ARole%3A%0AOrganization%3A%0AWhat%20I%27d%20like%20to%20discuss%3A%0AGood%20times%20for%20me%3A%0A" data-cta="assessments-book-call">Book a call</a></div>
+    <p class="disclaimer" style="margin-top:24px">These are EQ Leadership Institute's own leadership reflection tools, not validated psychometric, clinical or diagnostic tests. They are not EQ-i 2.0, EQ-i 360 or Hogan assessments. Scope and delivery details are agreed before purchase.</p>
   </div>
 </section>
 
@@ -274,7 +271,7 @@
       <div class="card"><div class="dot" aria-hidden="true">3</div><h3>Who it's for</h3><p>Managers and directors whose teams are bringing in AI tools and agents, starting with healthcare, then technology and finance. No technical background needed.</p></div>
     </div>
     <div class="prog" style="margin-top:40px">
-      <div class="card"><h3>Founding seat</h3><p><strong style="font-size:1.6em">$795</strong> per leader, one-time. Seats are limited to keep the group small. Next cohort dates announced soon.</p><div class="btn-row" style="margin-top:16px"><a class="btn btn-clay" href="https://buy.stripe.com/28E7sLfQw5bE11Ddae7Vm0u" rel="noopener" data-cta="lab-reserve">Reserve a founding seat</a></div></div>
+      <div class="card"><h3>Founding seat</h3><p><strong>Contact us for pricing.</strong> Seats are limited to keep the group small. Next cohort dates announced soon.</p><div class="btn-row" style="margin-top:16px"><a class="btn btn-clay" href="mailto:hello@eqleadershipinstitute.com?subject=Book%20a%20call&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20book%20a%20call.%0A%0AName%3A%0ARole%3A%0AOrganization%3A%0AWhat%20I%27d%20like%20to%20discuss%3A%0AGood%20times%20for%20me%3A%0A" data-cta="lab-book-call">Book a call</a></div></div>
       <div class="card"><h3>Team edition</h3><p>A private cohort for your organization's leaders, shaped around your team. Priced by proposal.</p><div class="btn-row" style="margin-top:16px"><a class="btn btn-ghost" href="mailto:hello@eqleadershipinstitute.com?subject=Human%20%2B%20AI%20Leadership%20Lab%3A%20Team%20edition%20inquiry&amp;body=Hello%2C%0A%0AWe%27d%20like%20a%20proposal%20for%20a%20private%20team%20edition.%0A%0AOrganization%3A%0ANumber%20of%20leaders%3A%0AIndustry%3A%0A" data-cta="lab-team-inquire">Team edition: Inquire</a></div></div>
     </div>
     <p class="micro center" style="margin-top:24px">Leadership development, not therapy or counseling. Questions? <a href="mailto:hello@eqleadershipinstitute.com?subject=Human%20%2B%20AI%20Leadership%20Lab" data-cta="lab-question">hello@eqleadershipinstitute.com</a></p>
@@ -296,7 +293,7 @@
       <div class="btn-row" style="margin-top:28px"><a class="btn btn-clay" href="#self-check" data-cta="who-check">Take the free self-check</a></div>
     </div>
     <div class="photo">
-      <picture><source type="image/webp" srcset="img/workshop-900.webp 900w, img/workshop.webp 1680w" sizes="(max-width:860px) 100vw, 50vw"><img src="img/workshop.jpg" width="1680" height="944" loading="lazy" alt="Executives in business attire around a table in a leadership workshop"></picture>
+      <picture><source type="image/avif" srcset="img/v2/clinical-team-640.avif 640w, img/v2/clinical-team-1080.avif 1080w" sizes="(max-width:899px) 92vw, 540px"><source type="image/webp" srcset="img/v2/clinical-team-640.webp 640w, img/v2/clinical-team-1080.webp 1080w" sizes="(max-width:899px) 92vw, 540px"><img src="img/v2/clinical-team-1080.jpg" srcset="img/v2/clinical-team-640.jpg 640w, img/v2/clinical-team-1080.jpg 1080w" sizes="(max-width:899px) 92vw, 540px" width="1080" height="720" alt="A clinical team gathered around a workstation, working through a decision together" loading="lazy" decoding="async"></picture>
     </div>
   </div>
 </section>
@@ -331,10 +328,6 @@
 
 <!-- 9. FINAL CTA -->
 <section class="section on-dark final" aria-labelledby="final-h">
-  <picture>
-    <source type="image/webp" srcset="img/listen-900.webp 900w, img/listen.webp 1680w" sizes="100vw">
-    <img src="img/listen.jpg" width="1680" height="944" loading="lazy" alt="">
-  </picture>
   <div class="wrap center">
     <p class="kicker">Start today</p>
     <h2 id="final-h">Lead with clarity, trust and humanity.</h2>
@@ -342,6 +335,7 @@
     <div class="btn-row">
       <a class="btn btn-clay" href="#self-check" data-cta="final-check">Take the free self-check</a>
       <a class="btn btn-ghost" href="mailto:hello@eqleadershipinstitute.com?subject=Assessment%20inquiry&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20request%20an%20assessment%20engagement.%0A%0AMy%20role%3A%0AOrganization%3A%0AWhat%20I%27d%20like%20to%20work%20on%3A%0A" data-cta="final-conversation">Request an Assessment</a>
+      <a class="btn btn-ghost" href="mailto:hello@eqleadershipinstitute.com?subject=Book%20a%20call&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20book%20a%20call.%0A%0AName%3A%0ARole%3A%0AOrganization%3A%0AWhat%20I%27d%20like%20to%20discuss%3A%0AGood%20times%20for%20me%3A%0A" data-cta="final-book-call">Book a call</a>
     </div>
   </div>
 </section>
@@ -351,7 +345,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="row">
-      <a class="brand" href="#top" aria-label="EQ Leadership Institute, back to top" data-cta="footer-logo"><picture><source srcset="img/eq-badge-176.webp" type="image/webp"><img class="mark" src="img/eq-badge-176.png" width="88" height="88" alt="" loading="lazy" decoding="async"></picture></a>
+      <a class="brand" href="#top" aria-label="EQ Leadership Institute, back to top" data-cta="footer-logo"><picture><source type="image/avif" srcset="img/v2/eq-badge-88.avif 1x, img/v2/eq-badge-176.avif 2x"><source type="image/webp" srcset="img/v2/eq-badge-88.webp 1x, img/v2/eq-badge-176.webp 2x"><img class="mark" src="img/v2/eq-badge-176.png" width="88" height="88" alt="" loading="lazy" decoding="async"></picture></a>
       <ul>
         <li><a href="#self-check" data-cta="footer-check">Self-check</a></li>
         <li><a href="#lab" data-cta="footer-lab">The Lab</a></li>
@@ -361,7 +355,7 @@
         <li><a href="mailto:hello@eqleadershipinstitute.com?subject=EQ%20Leadership%20Institute" data-cta="footer-contact">Contact</a></li>
       </ul>
     </div>
-    <div class="legal"><span>&copy; 2026 EQ Leadership Institute</span><span>Photography: AI-generated images. The self-check is a reflection tool, not a clinical or diagnostic assessment.</span></div>
+    <div class="legal"><span>&copy; 2026 EQ Leadership Institute &middot; from Florida &middot; <a href="mailto:hello@eqleadershipinstitute.com?subject=EQ%20Leadership%20Institute">hello@eqleadershipinstitute.com</a></span><span>Photography: AI-generated images. The self-check is a reflection tool, not a clinical or diagnostic assessment.</span></div>
   </div>
 </footer>
 
