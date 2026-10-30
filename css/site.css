@@ -3,7 +3,7 @@
 :root{--aub:#3A2242;--aub-2:#4A2E54;--linen:#F7F2EC;--sand:#E8DCCB;--clay:#C9785D;--clay-d:#A85E45;--sage:#A9BCAE;--sage-d:#5E7565;--ink:#2B2730;--muted:#5D5560;--line:#E3D8CA;
 --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--r:28px;--r-sm:18px;--wrap:1160px}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{margin:0;font:400 1.0625rem/1.65 var(--sans);color:var(--ink);background:var(--linen);-webkit-font-smoothing:antialiased}
 img,video{max-width:100%;display:block}
@@ -38,14 +38,16 @@ p{margin:0 0 1em}
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--aub)}
 .brand{gap:12px}
-.brand .mark{width:46px;height:46px;flex:none;display:block}
+.brand picture{display:block;flex:none}
+.brand .mark{width:80px;height:80px;flex:none;display:block}
+.site-header .wrap{padding-top:4px;padding-bottom:4px}
 .brand .wm{display:flex;flex-direction:column;line-height:1}
 .brand .t1{font:500 1.42rem/1 var(--serif);letter-spacing:-.005em;color:var(--aub);white-space:nowrap}
 .brand .t2{font:500 .66rem/1 var(--serif);letter-spacing:.42em;text-transform:uppercase;color:#6B4A72;margin-top:6px;padding-top:6px;border-top:1px solid rgba(201,120,93,.55);align-self:flex-start;padding-right:2px}
-.site-footer .brand .mark{width:56px;height:56px}
+.site-footer .brand .mark{width:88px;height:88px}
 .site-footer .brand .t1{color:var(--linen);font-size:1.55rem}
 .site-footer .brand .t2{color:var(--sand)}
-@media (max-width:520px){.brand{gap:9px}.brand .mark{width:38px;height:38px}.brand .t1{font-size:1.08rem}.brand .t2{font-size:.56rem;letter-spacing:.34em;margin-top:5px;padding-top:5px}}
+@media (max-width:520px){.brand{gap:9px}.brand .mark{width:64px;height:64px}.brand .t1{font-size:1.08rem}.brand .t2{font-size:.56rem;letter-spacing:.34em;margin-top:5px;padding-top:5px}}
 @media (max-width:360px){.site-header .brand .wm{display:none}}
 .nav{display:flex;align-items:center;gap:22px}
 .nav a:not(.btn){color:var(--ink);text-decoration:none;font-weight:600;font-size:.96rem}
