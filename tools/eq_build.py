@@ -60,8 +60,8 @@ rep("/^\\S+@\\S+\\.\\S+$/","/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+(?![\\s\\S])/")
 rep('<p class="disclaimer" style="margin-top:24px">These are EQ',f'<div class="cta-band"><p>Contact us for pricing.</p><a class="btn btn-clay" href="{CALL}" data-cta="assessments-book-call">Book a call</a></div>\n    <p class="disclaimer" style="margin-top:24px">These are EQ')
 # final CTA: add Book a call
 rep('data-cta="final-conversation">Request an Assessment</a>',f'data-cta="final-conversation">Request an Assessment</a>\n      <a class="btn btn-ghost" href="{CALL}" data-cta="final-book-call">Book a call</a>')
-# footer: from Florida + visible hello@
-rep('<span>&copy; 2026 EQ Leadership Institute</span>',f'<span>&copy; 2026 EQ Leadership Institute &middot; from Florida &middot; <a href="mailto:{MAIL}?subject=EQ%20Leadership%20Institute">{MAIL}</a></span>')
+# footer: visible hello@ (no location line, per Vanna 2026-10-30)
+rep('<span>&copy; 2026 EQ Leadership Institute</span>',f'<span>&copy; 2026 EQ Leadership Institute &middot; <a href="mailto:{MAIL}?subject=EQ%20Leadership%20Institute">{MAIL}</a></span>')
 BAD=re.compile('str'+'ipe|\\$|ai-generated|video|film|buy\\.',re.I)
 assert not BAD.search(s), BAD.search(s).group(0)
 open('index.html','w').write(s); print('index',len(s))
