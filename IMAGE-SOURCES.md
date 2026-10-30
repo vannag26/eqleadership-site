@@ -10,7 +10,8 @@ All photographs come from Vanna's Library (`/workspace/vanna/library/Images/`), 
 | img/v2/clinical-team-{640,1080}.* | Who it's for | Images/Orbisolo Executive/orbisolo-exec-01.png | 3:2, 45% |
 | img/v2/eq-badge-{64,80,88,128,160,176}.{avif,webp,png} | Header (80, 64 on mobile), footer (88), 404 | img/eq-badge-176.png (approved badge from f5fe3ff) | - |
 | favicons, img/og-image.jpg | Unchanged from f5fe3ff | - | - |
-| media/eq-commercial.mp4 + poster-960 | Existing approved short film (unchanged) | Earlier Canva footage (see img/CREDITS.md) | - |
 
 Skipped after viewing: orbisolo-exec-02/03/04/05/06/07/13/14 and hc-ai-innovation/patient-care/solutions banners (baked-in text, icon overlays or claims), 09 (no people), 11/12 (Orbisolo hero frames; 11 also has a slogan on screen).
 The self-check photo was replaced by a "four areas" panel and the final CTA photo by CSS art, so no extra images were needed.
+
+Badge and icons (2026-10-30): every badge size (64/128/192, 80/160/240, 88/176/264), favicons and the OG badge are cut by `tools/eq_badge.py` from the master `/workspace/vanna/library/Logos/EQ/4-VDG-EQ-Leadership-Institute-8x8cm.pdf`, rendered with pdftocairo at 600 dpi (1890x1890). The old short film and its posters are removed from the branch.

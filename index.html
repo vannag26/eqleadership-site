@@ -40,7 +40,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="EQ Leadership Institute, back to top" data-cta="header-logo">
-      <picture><source media="(max-width:719px)" type="image/avif" srcset="img/v2/eq-badge-64.avif 1x, img/v2/eq-badge-128.avif 2x"><source media="(max-width:719px)" type="image/webp" srcset="img/v2/eq-badge-64.webp 1x, img/v2/eq-badge-128.webp 2x"><source type="image/avif" srcset="img/v2/eq-badge-80.avif 1x, img/v2/eq-badge-160.avif 2x"><source type="image/webp" srcset="img/v2/eq-badge-80.webp 1x, img/v2/eq-badge-160.webp 2x"><img class="mark" src="img/v2/eq-badge-160.png" width="80" height="80" alt=""></picture>
+      <picture><source media="(max-width:719px)" type="image/avif" srcset="img/v2/eq-badge-64.avif 1x, img/v2/eq-badge-128.avif 2x, img/v2/eq-badge-192.avif 3x"><source media="(max-width:719px)" type="image/webp" srcset="img/v2/eq-badge-64.webp 1x, img/v2/eq-badge-128.webp 2x, img/v2/eq-badge-192.webp 3x"><source type="image/avif" srcset="img/v2/eq-badge-80.avif 1x, img/v2/eq-badge-160.avif 2x, img/v2/eq-badge-240.avif 3x"><source type="image/webp" srcset="img/v2/eq-badge-80.webp 1x, img/v2/eq-badge-160.webp 2x, img/v2/eq-badge-240.webp 3x"><img class="mark" src="img/v2/eq-badge-160.png" width="80" height="80" alt=""></picture>
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#why" data-cta="nav-why">Why EQ</a>
@@ -70,32 +70,6 @@
     <ul class="trust" aria-label="About the self-check">
       <li>Free</li><li>About 5 minutes</li><li>Results on screen</li><li>No account needed</li>
     </ul>
-  </div>
-</section>
-
-<!-- 2. VIDEO -->
-<section class="section" id="video" aria-labelledby="video-h">
-  <div class="wrap video-grid">
-    <div>
-      <p class="kicker">In 30 seconds</p>
-      <h2 id="video-h">Leadership is felt before it is heard.</h2>
-      <p class="lead">A short film about the four areas the self-check looks at. On-screen text, so it works with the sound off.</p>
-    </div>
-    <div>
-      <div class="video-frame" id="vframe">
-        <video id="promo" preload="none" playsinline muted controls poster="media/eq-commercial-poster-960.jpg" width="1280" height="720" aria-label="EQ Leadership Institute short film (on-screen text, music only)">
-          <source src="media/eq-commercial.mp4" type="video/mp4">
-          Your browser does not support embedded video.
-        </video>
-        <button class="play" type="button" id="playbtn" data-cta="video-play" aria-label="Play film: EQ Leadership Institute short film">
-          <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></span>
-          <span>Play film</span>
-        </button>
-      </div>
-      <div class="btn-row video-cta">
-        <a class="btn btn-clay" href="#self-check" data-cta="video-check">Take the free self-check</a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -345,7 +319,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="row">
-      <a class="brand" href="#top" aria-label="EQ Leadership Institute, back to top" data-cta="footer-logo"><picture><source type="image/avif" srcset="img/v2/eq-badge-88.avif 1x, img/v2/eq-badge-176.avif 2x"><source type="image/webp" srcset="img/v2/eq-badge-88.webp 1x, img/v2/eq-badge-176.webp 2x"><img class="mark" src="img/v2/eq-badge-176.png" width="88" height="88" alt="" loading="lazy" decoding="async"></picture></a>
+      <a class="brand" href="#top" aria-label="EQ Leadership Institute, back to top" data-cta="footer-logo"><picture><source type="image/avif" srcset="img/v2/eq-badge-88.avif 1x, img/v2/eq-badge-176.avif 2x, img/v2/eq-badge-264.avif 3x"><source type="image/webp" srcset="img/v2/eq-badge-88.webp 1x, img/v2/eq-badge-176.webp 2x, img/v2/eq-badge-264.webp 3x"><img class="mark" src="img/v2/eq-badge-176.png" width="88" height="88" alt="" loading="lazy" decoding="async"></picture></a>
       <ul>
         <li><a href="#self-check" data-cta="footer-check">Self-check</a></li>
         <li><a href="#lab" data-cta="footer-lab">The Lab</a></li>
@@ -355,7 +329,7 @@
         <li><a href="mailto:hello@eqleadershipinstitute.com?subject=EQ%20Leadership%20Institute" data-cta="footer-contact">Contact</a></li>
       </ul>
     </div>
-    <div class="legal"><span>&copy; 2026 EQ Leadership Institute &middot; from Florida &middot; <a href="mailto:hello@eqleadershipinstitute.com?subject=EQ%20Leadership%20Institute">hello@eqleadershipinstitute.com</a></span><span>Photography: AI-generated images. The self-check is a reflection tool, not a clinical or diagnostic assessment.</span></div>
+    <div class="legal"><span>&copy; 2026 EQ Leadership Institute &middot; from Florida &middot; <a href="mailto:hello@eqleadershipinstitute.com?subject=EQ%20Leadership%20Institute">hello@eqleadershipinstitute.com</a></span><span>The self-check is a reflection tool, not a clinical or diagnostic assessment.</span></div>
   </div>
 </footer>
 
@@ -370,17 +344,6 @@
     var d={event:'cta_click',cta:el.getAttribute('data-cta')}; window.dataLayer.push(d);
     if(typeof window.gtag==='function') window.gtag('event','cta_click',{cta_id:d.cta});
   });
-
-  /* Video: click to play (muted, on-screen text) */
-  var v=document.getElementById('promo'),f=document.getElementById('vframe'),b=document.getElementById('playbtn');
-  if(v&&b){
-    v.removeAttribute('controls');
-    function unavailable(){f.classList.remove('playing');b.style.display='none';
-      if(!f.querySelector('.video-msg')){var m=document.createElement('p');m.className='video-msg';m.textContent='Film coming soon. In the meantime, take the free self-check below.';f.appendChild(m);}}
-    var src=v.querySelector('source'); if(src) src.addEventListener('error',unavailable);
-    b.addEventListener('click',function(){f.classList.add('playing');v.setAttribute('controls','');v.muted=true;var r=v.play();if(r&&r.catch)r.catch(unavailable);v.focus();});
-    v.addEventListener('ended',function(){f.classList.remove('playing');v.removeAttribute('controls');});
-  }
 
   /* Self-check: 12 original reflection statements, 4 areas x 3. Scored in the browser only. */
   var AREAS=[
@@ -445,7 +408,7 @@
       e.preventDefault();
       if(su.querySelector('#s-hp').value) return;
       var req=[].slice.call(su.querySelectorAll('[required]'));
-      var bad=req.filter(function(i){return !i.value.trim()||(i.type==='email'&&!/^\S+@\S+\.\S+$/.test(i.value));});
+      var bad=req.filter(function(i){return !i.value.trim()||(i.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+(?![\s\S])/.test(i.value));});
       req.forEach(function(i){i.setAttribute('aria-invalid',bad.indexOf(i)>-1?'true':'false');});
       if(bad.length){st.textContent='Please add your first name, a valid work email and your role.';bad[0].focus();return;}
       var g=function(id){return su.querySelector(id).value.trim();},sc=window.__eqScores||[];

@@ -10,8 +10,10 @@ def pic(n,ws,W,H,sizes,alt,extra=''):
     return f'<picture><source type="image/avif" srcset="{ss("avif")}" sizes="{sizes}"><source type="image/webp" srcset="{ss("webp")}" sizes="{sizes}"><img src="img/v2/{n}-{ws[-1]}.jpg" srcset="{ss("jpg")}" sizes="{sizes}" width="{W}" height="{H}" alt="{alt}"{extra}></picture>'
 def badge(px,lazy):
     lz=' loading="lazy" decoding="async"' if lazy else ''
-    if px==80: srcs='<source media="(max-width:719px)" type="image/avif" srcset="img/v2/eq-badge-64.avif 1x, img/v2/eq-badge-128.avif 2x"><source media="(max-width:719px)" type="image/webp" srcset="img/v2/eq-badge-64.webp 1x, img/v2/eq-badge-128.webp 2x"><source type="image/avif" srcset="img/v2/eq-badge-80.avif 1x, img/v2/eq-badge-160.avif 2x"><source type="image/webp" srcset="img/v2/eq-badge-80.webp 1x, img/v2/eq-badge-160.webp 2x">'
-    else: srcs='<source type="image/avif" srcset="img/v2/eq-badge-88.avif 1x, img/v2/eq-badge-176.avif 2x"><source type="image/webp" srcset="img/v2/eq-badge-88.webp 1x, img/v2/eq-badge-176.webp 2x">'
+    # badge files: tools/eq_badge.py, from the PDF master rendered at 600 dpi
+    x3=lambda n,e: f'img/v2/eq-badge-{n}.{e} 1x, img/v2/eq-badge-{n*2}.{e} 2x, img/v2/eq-badge-{n*3}.{e} 3x'
+    if px==80: srcs=''.join(f'<source media="(max-width:719px)" type="image/{e}" srcset="{x3(64,e)}">' for e in ('avif','webp'))+''.join(f'<source type="image/{e}" srcset="{x3(80,e)}">' for e in ('avif','webp'))
+    else: srcs=''.join(f'<source type="image/{e}" srcset="{x3(88,e)}">' for e in ('avif','webp'))
     return f'<picture>{srcs}<img class="mark" src="img/v2/eq-badge-{px*2}.png" width="{px}" height="{px}" alt=""{lz}></picture>'
 def rep(a,b,count=1):
     global s
@@ -43,15 +45,25 @@ s=re.sub(r'(<section class="section on-dark final"[^>]*>\s*)<picture>.*?</pictur
 rep('<p>A four-week live virtual cohort. $795 founding seat. <a href="#lab">Details</a></p>','<p>A four-week live virtual cohort. Contact us for pricing. <a href="#lab">Details</a></p>')
 rep('<p class="kicker">Paid assessments · USD</p>','<p class="kicker">Paid assessments</p>')
 rep(' All prices are in US dollars; scope and delivery details are agreed before purchase.',' Scope and delivery details are agreed before purchase.')
-rep('<p><strong style="font-size:1.6em">$795</strong> per leader, one-time. Seats are limited to keep the group small. Next cohort dates announced soon.</p><div class="btn-row" style="margin-top:16px"><a class="btn btn-clay" href="https://buy.stripe.com/28E7sLfQw5bE11Ddae7Vm0u" rel="noopener" data-cta="lab-reserve">Reserve a founding seat</a></div>',
-    f'<p><strong>Contact us for pricing.</strong> Seats are limited to keep the group small. Next cohort dates announced soon.</p><div class="btn-row" style="margin-top:16px"><a class="btn btn-clay" href="{CALL}" data-cta="lab-book-call">Book a call</a></div>')
+s=re.sub(r'<p><strong style="font-size:1.6em">\$795</strong>.*?data-cta="lab-reserve">Reserve a founding seat</a></div>',
+    f'<p><strong>Contact us for pricing.</strong> Seats are limited to keep the group small. Next cohort dates announced soon.</p><div class="btn-row" style="margin-top:16px"><a class="btn btn-clay" href="{CALL}" data-cta="lab-book-call">Book a call</a></div>',s,count=1,flags=re.S)
+assert 'lab-reserve' not in s and 'lab-book-call' in s
 assert '$' not in re.sub(r'<script>.*?</script>','',s,flags=re.S), 'price left'
+# old short-film section, its poster and its player script removed (Library media only)
+s,n=re.subn(r'<!-- 2\. VIDEO -->\s*<section class="section" id="video".*?</section>\s*','',s,count=1,flags=re.S); assert n==1
+s,n=re.subn(r'\n  /\* Video: click to play.*?(?=\n  /\* Self-check)','',s,count=1,flags=re.S); assert n==1
+# footer: drop the photography line
+rep('<span>Photography: AI-generated images. The self-check','<span>The self-check')
+# email check without an end anchor (keeps the page free of the dollar sign)
+rep("/^\\S+@\\S+\\.\\S+$/","/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+(?![\\s\\S])/")
 # Contact us for pricing + Book a call band after the paid assessments
 rep('<p class="disclaimer" style="margin-top:24px">These are EQ',f'<div class="cta-band"><p>Contact us for pricing.</p><a class="btn btn-clay" href="{CALL}" data-cta="assessments-book-call">Book a call</a></div>\n    <p class="disclaimer" style="margin-top:24px">These are EQ')
 # final CTA: add Book a call
 rep('data-cta="final-conversation">Request an Assessment</a>',f'data-cta="final-conversation">Request an Assessment</a>\n      <a class="btn btn-ghost" href="{CALL}" data-cta="final-book-call">Book a call</a>')
 # footer: from Florida + visible hello@
 rep('<span>&copy; 2026 EQ Leadership Institute</span>',f'<span>&copy; 2026 EQ Leadership Institute &middot; from Florida &middot; <a href="mailto:{MAIL}?subject=EQ%20Leadership%20Institute">{MAIL}</a></span>')
+BAD=re.compile('str'+'ipe|\\$|ai-generated|video|film|buy\\.',re.I)
+assert not BAD.search(s), BAD.search(s).group(0)
 open('index.html','w').write(s); print('index',len(s))
 nf=f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow">
@@ -62,4 +74,5 @@ nf=f'''<!doctype html>
 <p class="kicker">404</p><h1>Page not found</h1><p class="lead">The page you are looking for is misplaced.</p>
 <div class="btn-row"><a class="btn btn-clay" href="/">Back to home</a><a class="btn btn-ghost" href="/#self-check">Take the free self-check</a></div></div></main></body></html>
 '''
+assert not BAD.search(nf)
 open('404.html','w').write(nf); print('404 ok')
