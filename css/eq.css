@@ -255,3 +255,4 @@ html{scroll-padding-top:104px}
 .nf .btn-row{justify-content:center;margin-top:26px}.nf .btn-ghost{color:var(--linen)}
 @media (min-width:761px){.hero::after{background:linear-gradient(90deg,rgba(36,20,42,.96) 0%,rgba(36,20,42,.86) 30%,rgba(36,20,42,.3) 52%,rgba(36,20,42,.08) 100%),linear-gradient(0deg,rgba(36,20,42,.55) 0%,rgba(36,20,42,0) 30%)}.hero-media img{object-position:70% center}}
 #assessments{background:linear-gradient(180deg,#F1E9DF,var(--linen))}
+@media (max-width:760px){.hero-media img{object-position:44% 30%}}
