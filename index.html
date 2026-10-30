@@ -27,12 +27,6 @@
 <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" imagesrcset="img/v2/hero-768.avif 768w, img/v2/hero-1280.avif 1280w, img/v2/hero-1774.avif 1774w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="css/eq.css">
-<!--
-  ANALYTICS PLACEHOLDER: nothing loads until Vanna picks a free option and adds her own ID
-  (Cloudflare Web Analytics or GA4, same pattern as vdgmanagement.com).
-  No ads / AdSense on this site.
-  Every CTA carries data-cta="..."; the script at the bottom pushes a "cta_click" event to window.dataLayer.
--->
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -55,7 +49,6 @@
 
 <main id="main">
 
-<!-- 1. HERO -->
 <section class="hero" id="top" aria-labelledby="hero-h">
   <div class="hero-media"><picture><source type="image/avif" srcset="img/v2/hero-768.avif 768w, img/v2/hero-1280.avif 1280w, img/v2/hero-1774.avif 1774w" sizes="100vw"><source type="image/webp" srcset="img/v2/hero-768.webp 768w, img/v2/hero-1280.webp 1280w, img/v2/hero-1774.webp 1774w" sizes="100vw"><img src="img/v2/hero-1774.jpg" srcset="img/v2/hero-768.jpg 768w, img/v2/hero-1280.jpg 1280w, img/v2/hero-1774.jpg 1774w" sizes="100vw" width="1774" height="887" alt="A leader standing to guide a boardroom discussion with executives and clinicians, city skyline at sunset" fetchpriority="high"></picture></div>
   <div class="wrap">
@@ -73,7 +66,6 @@
   </div>
 </section>
 
-<!-- 3. WHY EQ -->
 <section class="section sand" id="why" aria-labelledby="why-h">
   <div class="wrap">
     <div class="split">
@@ -95,7 +87,6 @@
   </div>
 </section>
 
-<!-- 4. SELF-CHECK -->
 <section class="section" id="self-check" aria-labelledby="check-h">
   <div class="wrap">
     <div class="split rev">
@@ -109,7 +100,7 @@
     </div>
 
     <form class="check" id="eq-check" novalidate>
-      <div id="questions"><!-- questions are rendered by the script below; a <noscript> fallback follows --></div>
+      <div id="questions"></div>
       <noscript><p>The self-check needs JavaScript to show your results. You can still <a href="mailto:hello@eqleadershipinstitute.com?subject=EQ%20Leadership%20Self-Check">ask for a copy by email</a>.</p></noscript>
       <div class="check-foot">
         <span id="progress" aria-live="polite">0 of 12 answered</span>
@@ -152,7 +143,6 @@
   </div>
 </section>
 
-<!-- 5. PRINCIPLES -->
 <section class="section on-dark" id="approach" aria-labelledby="approach-h">
   <div class="wrap">
     <div class="center">
@@ -168,7 +158,6 @@
   </div>
 </section>
 
-<!-- 6. PROGRAMS -->
 <section class="section" id="programs" aria-labelledby="programs-h">
   <div class="wrap">
     <div class="split">
@@ -192,7 +181,6 @@
   </div>
 </section>
 
-<!-- PAID ASSESSMENTS -->
 <section class="section" id="assessments" aria-labelledby="assessments-h">
   <div class="wrap">
     <div class="center">
@@ -231,7 +219,6 @@
   </div>
 </section>
 
-<!-- 6a. HUMAN + AI LEADERSHIP LAB -->
 <section class="section on-dark" id="lab" aria-labelledby="lab-h">
   <div class="wrap">
     <div class="center">
@@ -252,7 +239,6 @@
   </div>
 </section>
 
-<!-- 7. WHO IT'S FOR -->
 <section class="section sand" id="who" aria-labelledby="who-h">
   <div class="wrap split rev">
     <div>
@@ -272,7 +258,6 @@
   </div>
 </section>
 
-<!-- 7b. ABOUT (mission only: no founder info, bio or personal details, per Vanna's rule of Oct 8, 2026) -->
 <section class="section" id="about" aria-labelledby="about-h">
   <div class="wrap">
     <div class="center">
@@ -283,7 +268,6 @@
   </div>
 </section>
 
-<!-- 8. FAQ -->
 <section class="section" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
     <div class="center"><p class="kicker">Questions</p><h2 id="faq-h">Before you start</h2></div>
@@ -300,7 +284,6 @@
   </div>
 </section>
 
-<!-- 9. FINAL CTA -->
 <section class="section on-dark final" aria-labelledby="final-h">
   <div class="wrap center">
     <p class="kicker">Start today</p>
